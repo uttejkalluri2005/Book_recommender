@@ -3,7 +3,6 @@ import pickle
 from  sklearn.neighbors import NearestNeighbors
 import numpy as np
 import pandas as pd
-from sqlalchemy import create_engine
 
 app = Flask(__name__)
 fin_pt = pickle.load(open("fin_pt.pkl","rb"))
