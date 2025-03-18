@@ -7,14 +7,12 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 fin_pt = pickle.load(open("fin_pt.pkl","rb"))
-<<<<<<< HEAD
 books = pickle.load(open("book.pkl","rb"))
 
-=======
-books = pickle.load(open("books.pkl","rb"))
->>>>>>> 855e7a20988adf8156a8137d3daa1ca2e05bf4f9
 @app.route("/",methods=["POST","GET"])
 def recommend():
+    if request.method == "GET":
+        return render_template("index.html")
     book_name = request.form.get("book_input")
     n = request.form.get("Similar_input")
     if n is None:
